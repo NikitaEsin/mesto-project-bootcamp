@@ -1,0 +1,18 @@
+.element__container {
+  background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  min-height: 79px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media all and (max-width: 894px) {
+  .element__container {
+    max-width: 282px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

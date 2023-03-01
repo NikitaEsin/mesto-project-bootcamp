@@ -1,0 +1,26 @@
+.profile__hobby {
+  max-width: 336px;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media all and (max-width: 650px) {
+  .profile__description {
+    max-width: 189px;
+    margin: 0 auto 0;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .profile__description {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

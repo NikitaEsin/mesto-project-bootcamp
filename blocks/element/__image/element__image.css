@@ -1,0 +1,11 @@
+.element__image {
+  width: 282px;
+  height: 282px;
+}
+
+@media all and (max-width: 894px) {
+  .element__image {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

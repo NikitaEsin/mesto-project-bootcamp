@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Сайт о путишествии по России" />
+    <meta name="keywords" content="traveling, exploring" />
+    <meta name="author" content="Никита Есин" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body class="root">
+    <!-- Popup -->
+    <div class="popup popup_opened">
+      <button class="popup__x" type="button" aria-label="close"></button>
+      <div class="popup__container">
+        <form class="popup__form" name="profile-edit">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input
+            class="popup__input popup__input_value_name"
+            name="name"
+            type="text"
+            placeholder="Жак-Ив Кусто"
+          />
+          <input
+            class="popup__input popup__input_value_description"
+            name="description"
+            type="text"
+            placeholder="Исследователь океана"
+          />
+          <button class="popup__button" type="submit" aria-label="save">
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__logo"></div>
+    </header>
+    <main class="content">
+      <!-- Profile s1 -->
+      <section class="profile">
+        <img src="./images/Avatar.png" class="profile__photo" alt="Фото" />
+        <div class="profile__info">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button
+            class="profile__edit-button"
+            type="button"
+            aria-label="edit"
+          ></button>
+          <p class="profile__hobby">Исследователь океана</p>
+        </div>
+        <button
+          class="profile__add-button"
+          type="button"
+          aria-label="add"
+        ></button>
+      </section>
+      <!-- Elements s2 -->
+      <section class="elements">
+        <div class="element">
+          <img
+            class="element__image"
+            src="./images/Karachevsk.png"
+            alt="Заросшое каменное здание"
+          />
+          <div class="element__container">
+            <h2 class="element__title">Карачаевск</h2>
+            <button
+              class="element__like-button"
+              type="button"
+              aria-label="like"
+            ></button>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            src="./images/Elbrus.png"
+            alt="Закат в поле"
+          />
+          <div class="element__container">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button
+              class="element__like-button"
+              type="button"
+              aria-label="like"
+            ></button>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            src="./images/Dombay.png"
+            alt="Лесные горы покрытые снегом"
+          />
+          <div class="element__container">
+            <h2 class="element__title">Домбай</h2>
+            <button
+              class="element__like-button"
+              type="button"
+              aria-label="like"
+            ></button>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            src="./images/Elbrus.png"
+            alt="Заросшое каменное здание"
+          />
+          <div class="element__container">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button
+              class="element__like-button"
+              type="button"
+              aria-label="like"
+            ></button>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            src="./images/Dombay.png"
+            alt="Закат в поле"
+          />
+          <div class="element__container">
+            <h2 class="element__title">Домбай</h2>
+            <button
+              class="element__like-button"
+              type="button"
+              aria-label="like"
+            ></button>
+          </div>
+        </div>
+        <div class="element">
+          <img
+            class="element__image"
+            src="./images/Karachevsk.png"
+            alt="Лесные горы покрытые снегом"
+          />
+          <div class="element__container">
+            <h2 class="element__title">Карачаево-Карачаево</h2>
+            <button
+              class="element__like-button"
+              type="button"
+              aria-label="like"
+            ></button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="footer__copyright">© 2023 Mesto Russia</p>
+    </footer>
+  </body>
+</html>
