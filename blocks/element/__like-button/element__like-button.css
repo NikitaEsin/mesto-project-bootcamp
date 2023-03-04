@@ -5,8 +5,10 @@
   height: 19px;
   transition: opacity 0.3s ease;
   border: 0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: transparent;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .element__like-button:hover {

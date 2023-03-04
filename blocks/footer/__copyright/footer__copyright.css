@@ -9,6 +9,7 @@
 
 @media all and (max-width: 600px) {
   .footer__copyright {
+    font-size: 14px;
     line-height: 17px;
   }
 }

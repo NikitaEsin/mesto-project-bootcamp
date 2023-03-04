@@ -1,4 +1,4 @@
-.popup__x {
+.popup__close-button {
   background-image: url(../../../images/cross.svg);
   width: 32px;
   height: 32px;
@@ -8,16 +8,17 @@
   transition: opacity 0.3s ease;
   border: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.popup__x:hover {
+.popup__close-button:hover {
   opacity: 0.6;
 }
 
 @media all and (max-width: 600px) {
-  .popup__x {
-    background-image: url(../../../images/corss-small.svg);
+  .popup__close-button {
     width: 20px;
     height: 20px;
     margin-top: 16px;

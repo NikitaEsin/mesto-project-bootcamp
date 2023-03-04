@@ -6,8 +6,10 @@
   margin-top: 15px;
   cursor: pointer;
   transition: opacity 0.3s ease;
-  border: 0;
-  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .profile__edit-button:hover {
@@ -22,7 +24,6 @@
 
 @media all and (max-width: 600px) {
   .profile__edit-button {
-    background-image: url(../../../images/Edit-Button-small.svg);
     margin-top: 10px;
     width: 18px;
     height: 18px;
