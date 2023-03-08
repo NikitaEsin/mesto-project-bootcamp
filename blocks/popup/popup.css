@@ -11,4 +11,6 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  visibility: hidden;
+  z-index: 1;
 }

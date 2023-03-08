@@ -11,12 +11,13 @@
     <title>Mesto</title>
   </head>
   <body class="root">
-    <!-- Popup -->
-    <div class="popup">
+    <!-- Popup 1 -->
+    <div class="popup" id="popup-edit">
       <button
         class="popup__close-button"
         type="button"
         aria-label="close"
+        id="popup-edit-button"
       ></button>
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
@@ -25,16 +26,45 @@
             class="popup__input"
             name="name"
             type="text"
-            placeholder="Жак-Ив Кусто"
+            value="Жак-Ив Кусто"
           />
           <input
             class="popup__input"
             name="description"
             type="text"
-            placeholder="Исследователь океана"
+            value="Исследователь океана"
           />
           <button class="popup__button" type="submit" aria-label="save">
             Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Popup 2 -->
+    <div class="popup" id="popup-add">
+      <button
+        class="popup__close-button"
+        type="button"
+        aria-label="close"
+        id="popup-add-button"
+      ></button>
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" name="profile-add">
+          <input
+            class="popup__input"
+            name="name"
+            type="text"
+            value="Название"
+          />
+          <input
+            class="popup__input"
+            name="description"
+            type="text"
+            value="Ссылка на картинку"
+          />
+          <button class="popup__button" type="submit" aria-label="save">
+            Создать
           </button>
         </form>
       </div>
@@ -53,6 +83,7 @@
             class="profile__edit-button"
             type="button"
             aria-label="редактировать"
+            id="profile-edit-button"
           ></button>
           <p class="profile__hobby">Исследователь океана</p>
         </div>
@@ -60,11 +91,17 @@
           class="profile__add-button"
           type="button"
           aria-label="add"
+          id="profile-add-button"
         ></button>
       </section>
       <!-- Elements s2 -->
       <section class="elements">
         <div class="element">
+          <button
+            class="element__trash"
+            type="button"
+            aria-label="удалить"
+          ></button>
           <img
             class="element__image"
             src="./images/Karachevsk.png"
@@ -76,6 +113,7 @@
               class="element__like-button"
               type="button"
               aria-label="лайк"
+              id="element-like-button"
             ></button>
           </div>
         </div>
