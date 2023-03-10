@@ -27,14 +27,21 @@
             name="name"
             type="text"
             value="Жак-Ив Кусто"
+            id="popup-name"
           />
           <input
             class="popup__input"
             name="description"
             type="text"
             value="Исследователь океана"
+            id="popup-description"
           />
-          <button class="popup__button" type="submit" aria-label="save">
+          <button
+            class="popup__button"
+            type="submit"
+            aria-label="save"
+            id="popup-save"
+          >
             Сохранить
           </button>
         </form>
@@ -59,14 +66,31 @@
           />
           <input
             class="popup__input"
-            name="description"
+            name="picture"
             type="text"
             value="Ссылка на картинку"
           />
-          <button class="popup__button" type="submit" aria-label="save">
+          <button
+            class="popup__button"
+            type="submit"
+            aria-label="create"
+            id="popup-create"
+          >
             Создать
           </button>
         </form>
+      </div>
+    </div>
+    <!-- Popup 3 -->
+    <div class="popup popup_dark" id="image-popup">
+      <div class="popup__image-container">
+        <button
+          class="popup__close-button popup__close_image-container"
+          type="button"
+          aria-label="close"
+        ></button>
+        <img alt="Пейзаж" class="popup__image" />
+        <p class="popup__place"></p>
       </div>
     </div>
     <!-- Header -->
@@ -74,7 +98,7 @@
       <div class="header__logo"></div>
     </header>
     <main class="content">
-      <!-- Profile s1 -->
+      <!-- Profile -->
       <section class="profile">
         <img src="./images/Avatar.png" class="profile__photo" alt="Фото" />
         <div class="profile__info">
@@ -94,104 +118,27 @@
           id="profile-add-button"
         ></button>
       </section>
-      <!-- Elements s2 -->
+      <!-- Elements -->
       <section class="elements">
-        <div class="element">
-          <button
-            class="element__trash"
-            type="button"
-            aria-label="удалить"
-          ></button>
-          <img
-            class="element__image"
-            src="./images/Karachevsk.png"
-            alt="Заросшое каменное здание"
-          />
-          <div class="element__container">
-            <h2 class="element__title">Карачаевск</h2>
+        <template id="element-template">
+          <div class="element">
             <button
-              class="element__like-button"
+              class="element__trash"
               type="button"
-              aria-label="лайк"
-              id="element-like-button"
+              aria-label="удалить"
             ></button>
+            <img class="element__image" alt="Пейзаж" />
+            <div class="element__container">
+              <h2 class="element__title"></h2>
+              <button
+                class="element__like-button"
+                type="button"
+                aria-label="лайк"
+                id="element-like-button"
+              ></button>
+            </div>
           </div>
-        </div>
-        <div class="element">
-          <img
-            class="element__image"
-            src="./images/Elbrus.png"
-            alt="Закат в поле"
-          />
-          <div class="element__container">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button
-              class="element__like-button"
-              type="button"
-              aria-label="like"
-            ></button>
-          </div>
-        </div>
-        <div class="element">
-          <img
-            class="element__image"
-            src="./images/Dombay.png"
-            alt="Лесные горы покрытые снегом"
-          />
-          <div class="element__container">
-            <h2 class="element__title">Домбай</h2>
-            <button
-              class="element__like-button"
-              type="button"
-              aria-label="like"
-            ></button>
-          </div>
-        </div>
-        <div class="element">
-          <img
-            class="element__image"
-            src="./images/Elbrus.png"
-            alt="Заросшое каменное здание"
-          />
-          <div class="element__container">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button
-              class="element__like-button"
-              type="button"
-              aria-label="like"
-            ></button>
-          </div>
-        </div>
-        <div class="element">
-          <img
-            class="element__image"
-            src="./images/Dombay.png"
-            alt="Закат в поле"
-          />
-          <div class="element__container">
-            <h2 class="element__title">Домбай</h2>
-            <button
-              class="element__like-button"
-              type="button"
-              aria-label="like"
-            ></button>
-          </div>
-        </div>
-        <div class="element">
-          <img
-            class="element__image"
-            src="./images/Karachevsk.png"
-            alt="Лесные горы покрытые снегом"
-          />
-          <div class="element__container">
-            <h2 class="element__title">Карачаево-Карачаево</h2>
-            <button
-              class="element__like-button"
-              type="button"
-              aria-label="like"
-            ></button>
-          </div>
-        </div>
+        </template>
       </section>
     </main>
     <!-- Footer -->

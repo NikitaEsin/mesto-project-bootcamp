@@ -1,0 +1,9 @@
+.popup__close_image-container {
+  margin: 0 0 8px auto;
+}
+
+@media all and (min-width: 600px) {
+  .popup__close_image-container {
+    margin: 0 -35px 8px auto;
+  }
+}
