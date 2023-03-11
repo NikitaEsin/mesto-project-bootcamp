@@ -15,32 +15,32 @@
     <div class="popup" id="popup-edit">
       <button
         class="popup__close-button"
+        id="popup-edit-button"
         type="button"
         aria-label="close"
-        id="popup-edit-button"
       ></button>
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form" name="profile-edit">
           <input
             class="popup__input"
+            id="popup-name"
             name="name"
             type="text"
             value="Жак-Ив Кусто"
-            id="popup-name"
           />
           <input
             class="popup__input"
+            id="popup-description"
             name="description"
             type="text"
             value="Исследователь океана"
-            id="popup-description"
           />
           <button
             class="popup__button"
+            id="popup-save"
             type="submit"
             aria-label="save"
-            id="popup-save"
           >
             Сохранить
           </button>
@@ -51,30 +51,32 @@
     <div class="popup" id="popup-add">
       <button
         class="popup__close-button"
+        id="popup-add-button"
         type="button"
         aria-label="close"
-        id="popup-add-button"
       ></button>
       <div class="popup__container">
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form" name="profile-add">
           <input
             class="popup__input"
-            name="name"
+            id="popup-input-heading"
+            name="heading"
             type="text"
-            value="Название"
+            placeholder="Название"
           />
           <input
             class="popup__input"
+            id="popup-input-picture"
             name="picture"
             type="text"
-            value="Ссылка на картинку"
+            placeholder="Ссылка на картинку"
           />
           <button
             class="popup__button"
+            id="popup-create"
             type="submit"
             aria-label="create"
-            id="popup-create"
           >
             Создать
           </button>
@@ -86,6 +88,7 @@
       <div class="popup__image-container">
         <button
           class="popup__close-button popup__close_image-container"
+          id="popup-image-button"
           type="button"
           aria-label="close"
         ></button>
@@ -105,17 +108,17 @@
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button
             class="profile__edit-button"
+            id="profile-edit-button"
             type="button"
             aria-label="редактировать"
-            id="profile-edit-button"
           ></button>
           <p class="profile__hobby">Исследователь океана</p>
         </div>
         <button
           class="profile__add-button"
+          id="profile-add-button"
           type="button"
           aria-label="add"
-          id="profile-add-button"
         ></button>
       </section>
       <!-- Elements -->
@@ -132,9 +135,9 @@
               <h2 class="element__title"></h2>
               <button
                 class="element__like-button"
+                id="element-like-button"
                 type="button"
                 aria-label="лайк"
-                id="element-like-button"
               ></button>
             </div>
           </div>
