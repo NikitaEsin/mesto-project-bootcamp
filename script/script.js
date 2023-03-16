@@ -19,6 +19,8 @@ const popupImageButton = document.querySelector('#popup-image-button')
 const popupInputHeading = document.querySelector('#popup-input-heading');
 const popupInputPicture = document.querySelector('#popup-input-picture');
 const popupCreate = document.querySelector('#popup-create');
+const popupEditForm = document.querySelector('#popup-edit-form');
+const popupAddForm = document.querySelector('#popup-add-form');
 
 /* Buttons */
 const openPopup = (item) => {
@@ -64,7 +66,8 @@ const handlePopupFormSubmit = (evt) => {
     profileHobby.textContent = popupDescription.value
     closePopup(popupEdit);
   };
-  popupSave.addEventListener('click', handlePopupFormSubmit);
+
+  popupEditForm.addEventListener('submit', handlePopupFormSubmit);
 
 /* Elements */
 const createCard = (link, name) => {
@@ -82,7 +85,7 @@ const createCard = (link, name) => {
   
     cardImage.addEventListener('click', () => {
       popupImage.src = link;
-      popupImage.alt = 'Пейзаж';
+      popupImage.alt = name;
       popupPlace.textContent = name;
       openPopup(imagePopup);
     });
@@ -120,4 +123,4 @@ const createCard = (link, name) => {
 
   };
 
-  popupCreate.addEventListener('click', handleItemFormSubmit);
+  popupAddForm.addEventListener('submit', handleItemFormSubmit);
