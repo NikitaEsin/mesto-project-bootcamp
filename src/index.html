@@ -28,6 +28,9 @@
             name="name"
             type="text"
             value="Жак-Ив Кусто"
+            minlength="2"
+            maxlength="40"
+            required
           />
           <input
             class="popup__input"
@@ -35,6 +38,9 @@
             name="description"
             type="text"
             value="Исследователь океана"
+            minlength="2"
+            maxlength="200"
+            required
           />
           <button
             class="popup__button"
@@ -64,13 +70,17 @@
             name="heading"
             type="text"
             placeholder="Название"
+            minlength="2"
+            maxlength="30"
+            required
           />
           <input
             class="popup__input"
             id="popup-input-picture"
             name="picture"
-            type="text"
+            type="url"
             placeholder="Ссылка на картинку"
+            required
           />
           <button
             class="popup__button"
