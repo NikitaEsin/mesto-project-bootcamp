@@ -137,13 +137,13 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add('form__input_type_error');
   errorElement.textContent = errorMessage;
-  errorElement.classList.add('form__input-error_active');
+  errorElement.classList.add('popup__input-error_activ');
 };
 
 const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove('form__input_type_error');
-  errorElement.classList.remove('form__input-error_active');
+  errorElement.classList.remove('popup__input-error_activ');
   errorElement.textContent = '';
 };
 
@@ -164,8 +164,10 @@ const hasInvalidInput = (inputList) => {
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add('popup__button_deactiv');
+    buttonElement.disabled = true
   } else {
     buttonElement.classList.remove('popup__button_deactiv');
+    buttonElement.disabled = false
   }
 };
 
@@ -212,4 +214,15 @@ const handleEscape = (evt) => {
   }
 };
 
+const elementSelectors = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_deactiv',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_activ',
+}; 
 
+enableValidation({
+  elementSelectors,
+});
