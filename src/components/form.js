@@ -1,4 +1,4 @@
-import { renderCards } from './cards';
+import { renderCards } from './card';
 import { closePopup } from './utils';
 import {
     profileName,
@@ -13,7 +13,7 @@ import {
     popupAdd,
   } from './const';
 /* Popup-edit form */
-const handlePopupFormSubmit = (evt) => {
+export const handlePopupFormSubmit = (evt) => {
     evt.preventDefault();
     profileName.textContent = popupName.value;
     profileHobby.textContent = popupDescription.value
@@ -24,7 +24,7 @@ const handlePopupFormSubmit = (evt) => {
 
 
 /* Add link image */
-  const handleItemFormSubmit = (evt) => {
+export const handleItemFormSubmit = (evt) => {
     evt.preventDefault();
   
     const newElement = {

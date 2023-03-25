@@ -1,7 +1,6 @@
 /* Input-Error */
-const popupForm = document.querySelector('.popup__form');
-const formInput = popupForm.querySelector('.popup__input');
-const formError = popupForm.querySelector(`.${formInput.id}-error`);
+export const popupForm = document.querySelector('.popup__form');
+export const formInput = popupForm.querySelector('.popup__input');
 
 export const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);

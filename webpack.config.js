@@ -29,6 +29,10 @@ module.exports = {
       {test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/, // регулярное выражение, которое ищет все файлы с такими расширениями
         type: 'asset/resource'
       },
+      {
+        test: /\.html$/,
+        use: 'html-loader',
+      },
       {test: /\.css$/, // применять это правило только к CSS-файлам
         // при обработке этих файлов нужно использовать
         // MiniCssExtractPlugin.loader и css-loader
