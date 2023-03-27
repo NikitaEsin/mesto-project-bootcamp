@@ -1,4 +1,4 @@
-import { openPopup, closePopup } from './utils';
+import { openPopup, closePopup } from './modal';
 import {
     imagePopup,
     cardTemplate,
@@ -20,6 +20,7 @@ export const createCard = (link, name) => {
     });
   
     cardImage.src = link;
+    cardImage.alt = name;
   
     cardImage.addEventListener('click', () => {
       popupImage.src = link;

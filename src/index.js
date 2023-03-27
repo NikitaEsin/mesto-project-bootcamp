@@ -39,11 +39,7 @@ import {
   openPopup,
   closePopup,
   handleEscape,
-} from './components/utils';
-import {
-  handlePopupFormSubmit,
-  handleItemFormSubmit,
-} from './components/form';
+} from './components/modal';
 import {
   createCard,
   renderCards,
@@ -87,15 +83,42 @@ popups.forEach((popup) => {
   });
 });
 
+/* Popup-edit form */
+export const handlePopupFormSubmit = (evt) => {
+  evt.preventDefault();
+  profileName.textContent = popupName.value;
+  profileHobby.textContent = popupDescription.value
+  closePopup(popupEdit);
+};
+popupEditForm.addEventListener('submit', handlePopupFormSubmit);
+
+/* Add link image */
+export const handleItemFormSubmit = (evt) => {
+  evt.preventDefault();
+
+  const newElement = {
+    name: popupInputHeading.value,
+    link: popupInputPicture.value,
+  };
+
+  closePopup(popupAdd);
+  renderCards([newElement]);
+  popupInputHeading.value = '';
+  popupInputPicture.value = '';
+  evt.submitter.classList.add('popup__button_deactiv')
+  evt.submitter.disabled = true;
+};
+popupAddForm.addEventListener('submit', handleItemFormSubmit);
+
 const elementSelectors = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_deactiv',
-  inputErrorClass: 'popup__input_type_error',
+  inputErrorClass: 'form__input_type_error',
   errorClass: 'popup__input-error_activ',
 }; 
 
-enableValidation({
-  elementSelectors,
-});
+enableValidation(
+  elementSelectors
+);
