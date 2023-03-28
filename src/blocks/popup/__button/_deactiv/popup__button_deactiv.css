@@ -4,4 +4,9 @@
   background-color: #FFF;
   border: 1px solid #000000;
   border-radius: 2px;
+  cursor: default;
+  transition: none;
+}
+.popup__button_deactiv:hover {
+  opacity: 0.2;
 }

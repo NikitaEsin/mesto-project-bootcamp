@@ -16,3 +16,57 @@
 .element__trash:hover {
   opacity: 0.6;
 }
+
+@media all and (max-width: 894px) {
+  .element__trash {
+    right: 90px;
+  }
+}
+
+@media all and (max-width: 825px) {
+  .element__trash {
+    right: 70px;
+  }
+}
+
+@media all and (max-width: 755px) {
+  .element__trash {
+    right: 50px;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .element__trash {
+    right: 30px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .element__trash {
+    right: 160px;
+  }
+}
+
+@media all and (max-width: 525px) {
+  .element__trash {
+    right: 120px;
+  }
+}
+
+@media all and (max-width: 440px) {
+  .element__trash {
+    right: 80px;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .element__trash {
+    right: 50px;
+  }
+}
+
+@media all and (max-width: 335px) {
+  .element__trash {
+    right: 30px;
+  }
+}
