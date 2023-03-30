@@ -10,7 +10,7 @@
     <title>Mesto</title>
   </head>
   <body class="root">
-    <!-- Popup 1 -->
+    <!-- Popup edit -->
     <div class="popup" id="popup-edit">
       <button
         class="popup__close-button"
@@ -59,7 +59,7 @@
         </form>
       </div>
     </div>
-    <!-- Popup 2 -->
+    <!-- Popup add -->
     <div class="popup" id="popup-add">
       <button
         class="popup__close-button"
@@ -106,7 +106,7 @@
         </form>
       </div>
     </div>
-    <!-- Popup 3 -->
+    <!-- Popup image -->
     <div class="popup popup_dark" id="image-popup">
       <div class="popup__image-container">
         <button
@@ -115,8 +115,38 @@
           type="button"
           aria-label="close"
         ></button>
-        <img alt="Пейзаж" class="popup__image" />
+        <img class="popup__image" alt="Пейзаж" />
         <p class="popup__place"></p>
+      </div>
+    </div>
+    <!-- Popup avatar -->
+    <div class="popup" id="popup-avatar">
+      <button
+        class="popup__close-button"
+        id="avatar-close-button"
+        type="button"
+        aria-label="close"
+      ></button>
+      <div class="popup__container">
+        <form class="popup__form" name="avatar-form" novalidate>
+          <h2 class="popup__title">Обновить аватар</h2>
+          <input
+            id="avatar-input"
+            class="popup__input"
+            name="avatar"
+            type="url"
+            required
+          />
+          <span class="popup__input-error popup-input-avatar-error"></span>
+          <button
+            class="popup__button"
+            id="avatar-button"
+            type="submit"
+            aria-label="save"
+          >
+            Сохранить
+          </button>
+        </form>
       </div>
     </div>
     <!-- Header -->
@@ -126,16 +156,17 @@
     <main class="content">
       <!-- Profile -->
       <section class="profile">
-        <img src="./images/Avatar.png" class="profile__photo" alt="Фото" />
+        <div class="profile__avatar-hover"></div>
+        <img class="profile__photo" alt="Фото" />
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name"></h1>
           <button
             class="profile__edit-button"
             id="profile-edit-button"
             type="button"
             aria-label="редактировать"
           ></button>
-          <p class="profile__hobby">Исследователь океана</p>
+          <p class="profile__hobby"></p>
         </div>
         <button
           class="profile__add-button"
@@ -156,12 +187,15 @@
             <img class="element__image" alt="Пейзаж" />
             <div class="element__container">
               <h2 class="element__title"></h2>
-              <button
-                class="element__like-button"
-                id="element-like-button"
-                type="button"
-                aria-label="лайк"
-              ></button>
+              <div class="element__like-container">
+                <button
+                  class="element__like-button"
+                  id="element-like-button"
+                  type="button"
+                  aria-label="лайк"
+                ></button>
+                <p class="element__like-number"></p>
+              </div>
             </div>
           </div>
         </template>

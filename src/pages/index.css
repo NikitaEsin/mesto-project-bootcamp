@@ -22,7 +22,7 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/content/content.css);
-/* Profile s1*/
+/* Profile */
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/profile/__photo/profile__photo.css);
@@ -30,16 +30,19 @@
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 @import url(../blocks/profile/__hobby/profile__hobby.css);
+@import url(../blocks/profile/__avatar-hover/profile__avatar-hover.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
-/* Elements s2*/
+/* Elements */
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__trash/element__trash.css);
 @import url(../blocks/element/__image/element__image.css);
 @import url(../blocks/element/__container/element__container.css);
 @import url(../blocks/element/__title/element__title.css);
+@import url(../blocks/element/__like-container/element__like-container.css);
 @import url(../blocks/element/__like-button/element__like-button.css);
 @import url(../blocks/element/__like-button/_active/element__like-button_active.css);
+@import url(../blocks/element/__like-number/element__like-number.css);
 /* Footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);

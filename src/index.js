@@ -1,4 +1,5 @@
 import './pages/index.css';
+
 import {
   popupEdit,
   buttonCloseEdit,
@@ -23,7 +24,14 @@ import {
   popupEditForm,
   popupAddForm,
   popups,
+  profilePhoto,
+  avatarHover,
+  avatarPopup,
+  avatarCloseButton,
+  avatarInput,
+  avatarButton,
 } from './components/const';
+
 import {
   popupForm,
   formInput,
@@ -35,15 +43,37 @@ import {
   setEventListeners,
   enableValidation,
 } from './components/validate';
+
 import {
   openPopup,
   closePopup,
   handleEscape,
 } from './components/modal';
+
 import {
   createCard,
   renderCards,
 } from './components/card';
+
+import { 
+  config,
+  getResponse,
+  getUserProfile,
+  changeProfile,
+  addNewCard,
+  getInitialCards,
+  changeAvatar,
+} from './components/api';
+
+getUserProfile().then((res) => {
+  profileName.textContent = res.name;
+  profileHobby.textContent = res.about;
+  profilePhoto.src = res.avatar;
+});
+
+getInitialCards().then((res) => {
+  renderCards(res);
+});
 
 /* Edit-button */
 buttonCloseEdit.addEventListener('click', () => {
@@ -88,6 +118,7 @@ export const handlePopupFormSubmit = (evt) => {
   evt.preventDefault();
   profileName.textContent = popupName.value;
   profileHobby.textContent = popupDescription.value
+  changeProfile(popupName.value, popupDescription.value);
   closePopup(popupEdit);
 };
 popupEditForm.addEventListener('submit', handlePopupFormSubmit);
@@ -101,6 +132,7 @@ export const handleItemFormSubmit = (evt) => {
     link: popupInputPicture.value,
   };
 
+  addNewCard(newElement.name, newElement.link);
   closePopup(popupAdd);
   renderCards([newElement]);
   popupInputHeading.value = '';
@@ -108,6 +140,13 @@ export const handleItemFormSubmit = (evt) => {
   evt.submitter.classList.add('popup__button_deactiv')
   evt.submitter.disabled = true;
 };
+
+const handleAvatarFormSubmit = () => {
+  profilePhoto.src = avatarInput.value;
+  changeAvatar(avatarInput.value);
+  closePopup(avatarPopup);
+};
+
 popupAddForm.addEventListener('submit', handleItemFormSubmit);
 
 const elementSelectors = {
@@ -122,3 +161,13 @@ const elementSelectors = {
 enableValidation(
   elementSelectors
 );
+
+avatarHover.addEventListener('click', () => {
+  openModal(avatarPopup);
+});
+
+avatarCloseButton.addEventListener('click', () => {
+  closeModal(avatarPopup);
+});
+
+avatarButton.addEventListener('click', handleAvatarFormSubmit);
