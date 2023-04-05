@@ -1,3 +1,5 @@
+
+
 /* Input-Error */
 export const showInputError = (formElement, inputElement, errorMessage, selectors) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -37,7 +39,6 @@ export const toggleButtonState = (inputList, buttonElement, inactiveButtonClass)
     buttonElement.disabled = false
   }
 };
-
 export const setEventListeners = (formElement, selectors) => {
   const inputList = Array.from(formElement.querySelectorAll(selectors.inputSelector));
   const buttonElement = formElement.querySelector(selectors.submitButtonSelector);
@@ -51,7 +52,6 @@ export const setEventListeners = (formElement, selectors) => {
     });
   });
 };
-
 export const enableValidation = (selectors) => {
   const formList = Array.from(document.querySelectorAll(selectors.formSelector));
   formList.forEach((formElement) => {

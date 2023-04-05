@@ -32,7 +32,7 @@ export const changeProfile = (name, about) => {
       name: name,
       about: about,
     }),
-  });
+  }).then(getResponse);
 };
 
 export const addNewCard = (name, link) => {
@@ -43,28 +43,28 @@ export const addNewCard = (name, link) => {
       name: name,
       link: link,
     }),
-  });
+  }).then(getResponse);
 };
 
 export const deleteCard = (id) => {
   return fetch(`${config.baseUrl}/cards/${id}`, {
     method: 'DELETE',
     headers: config.headers,
-  });
+  }).then(getResponse);
 };
 
 export const likeCard = (id) => {
   return fetch(`${config.baseUrl}/cards/likes/${id}`, {
     method: 'PUT',
     headers: config.headers,
-  });
+  }).then(getResponse);
 };
 
 export const removeLike = (id) => {
   return fetch(`${config.baseUrl}/cards/likes/${id}`, {
     method: 'DELETE',
     headers: config.headers,
-  });
+  }).then(getResponse);
 };
 
 export const changeAvatar = (avatar) => {
@@ -74,5 +74,5 @@ export const changeAvatar = (avatar) => {
     body: JSON.stringify({
       avatar: avatar,
     }),
-  });
+  }).then(getResponse);
 };

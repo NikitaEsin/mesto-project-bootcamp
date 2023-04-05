@@ -23,6 +23,7 @@ import {
   popupCreate,
   popupEditForm,
   popupAddForm,
+  popupAvatarForm,
   popups,
   profilePhoto,
   avatarHover,
@@ -30,6 +31,7 @@ import {
   avatarCloseButton,
   avatarInput,
   avatarButton,
+  popupButton,
 } from './components/const';
 
 import {
@@ -65,14 +67,19 @@ import {
   changeAvatar,
 } from './components/api';
 
-getUserProfile().then((res) => {
-  profileName.textContent = res.name;
-  profileHobby.textContent = res.about;
-  profilePhoto.src = res.avatar;
-});
+export let userId;
 
-getInitialCards().then((res) => {
-  renderCards(res);
+Promise.all([getUserProfile(), getInitialCards()])
+.then(([userData, cards]) => {
+  profileName.textContent = userData.name;
+  profileHobby.textContent = userData.about;
+  profilePhoto.src = userData.avatar;
+  userId = userData._id;
+  renderCards(cards);
+})
+
+.catch((err) => {
+  console.log(err);
 });
 
 /* Edit-button */
@@ -114,37 +121,66 @@ popups.forEach((popup) => {
 });
 
 /* Popup-edit form */
-export const handlePopupFormSubmit = (evt) => {
-  evt.preventDefault();
-  profileName.textContent = popupName.value;
-  profileHobby.textContent = popupDescription.value
-  changeProfile(popupName.value, popupDescription.value);
-  closePopup(popupEdit);
+export const handlePopupFormSubmit = () => {
+  popupButton.textContent = 'Сохранить...';
+  changeProfile(popupName.value, popupDescription.value)
+  .then((res) => {
+    closePopup(popupEdit);
+    profileName.textContent = res.name;
+    profileHobby.textContent = res.about;
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    popupButton.textContent = 'Сохранить';
+  });
 };
 popupEditForm.addEventListener('submit', handlePopupFormSubmit);
 
 /* Add link image */
 export const handleItemFormSubmit = (evt) => {
-  evt.preventDefault();
-
+  popupButton.textContent = 'Сохранить...';
   const newElement = {
     name: popupInputHeading.value,
     link: popupInputPicture.value,
   };
 
-  addNewCard(newElement.name, newElement.link);
-  closePopup(popupAdd);
+  addNewCard(newElement.name, newElement.link)
+    .then((res) => {
+      renderCards([res]);
+    })
+    .then(() => {
+      closePopup(popupAdd);
+      popupAddForm.reset();
+      popupButton.classList.add('popup__button_inactive');
+      popupButton.disabled = true;
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    .finally(() => {
+      popupButton.textContent = 'Сохранить';
+    });
+
   renderCards([newElement]);
   popupInputHeading.value = '';
   popupInputPicture.value = '';
-  evt.submitter.classList.add('popup__button_deactiv')
-  evt.submitter.disabled = true;
 };
 
 const handleAvatarFormSubmit = () => {
-  profilePhoto.src = avatarInput.value;
-  changeAvatar(avatarInput.value);
-  closePopup(avatarPopup);
+  avatarButton.textContent = 'Сохранить...';
+  changeAvatar(avatarInput.value)
+  .then(() => {
+    profilePhoto.src = avatarInput.value;
+    closePopup(avatarPopup);
+  })
+    .catch((err) => {
+      console.log(err);
+    })
+    .finally(() => {
+      avatarButton.textContent = 'Сохранить';
+    });
 };
 
 popupAddForm.addEventListener('submit', handleItemFormSubmit);
@@ -163,11 +199,7 @@ enableValidation(
 );
 
 avatarHover.addEventListener('click', () => {
-  openModal(avatarPopup);
+  openPopup(avatarPopup);
 });
 
-avatarCloseButton.addEventListener('click', () => {
-  closeModal(avatarPopup);
-});
-
-avatarButton.addEventListener('click', handleAvatarFormSubmit);
+popupAvatarForm.addEventListener('submit', handleAvatarFormSubmit);
