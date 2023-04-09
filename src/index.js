@@ -153,7 +153,7 @@ export const handleItemFormSubmit = (evt) => {
     .then(() => {
       closePopup(popupAdd);
       popupAddForm.reset();
-      popupButton.classList.add('popup__button_inactive');
+      popupButton.classList.add('popup__button_deactiv');
       popupButton.disabled = true;
     })
     .catch((err) => {
