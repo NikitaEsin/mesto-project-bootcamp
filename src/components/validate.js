@@ -1,5 +1,3 @@
-
-
 /* Input-Error */
 export const showInputError = (formElement, inputElement, errorMessage, { elementSelectors } ) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -15,40 +13,38 @@ export const hideInputError = (formElement, inputElement, { elementSelectors }) 
   errorElement.textContent = '';
 };
 
-export const checkInputValidity = (
-  formElement,
-  inputElement,
-  { elementSelectors }
-) => {
+/* naprovlenie  */
+export const checkInputValidity = (formElement, inputElement, { elementSelectors }) => {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage, {
       elementSelectors,
     });
-  } else {
+  }
+  else {
     hideInputError(formElement, inputElement, { elementSelectors });
   }
 };
 
+/* est ili net oshibki */
 export const hasInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 };
 
-export const toggleButtonState = (
-  inputList,
-  buttonElement,
-  inactiveButtonClass
-) => {
+/* dopolnit i ubrat class activnosti */
+export const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(inactiveButtonClass);
     buttonElement.disabled = true;
-  } else {
+  } 
+  else {
     buttonElement.classList.remove(inactiveButtonClass);
     buttonElement.disabled = false;
   }
 };
 
+/* procruchivaet elementi 2 */
 export const setEventListeners = (formElement, { elementSelectors }) => {
   const inputList = Array.from(
     formElement.querySelectorAll(elementSelectors.inputSelector)
@@ -62,15 +58,13 @@ export const setEventListeners = (formElement, { elementSelectors }) => {
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
       checkInputValidity(formElement, inputElement, { elementSelectors });
-      toggleButtonState(
-        inputList,
-        buttonElement,
-        elementSelectors.inactiveButtonClass
+      toggleButtonState(inputList, buttonElement, elementSelectors.inactiveButtonClass
       );
     });
   });
 };
 
+/* procruchivaet elementi */
 export const enableValidation = ({ elementSelectors }) => {
   const formList = Array.from(
     document.querySelectorAll(elementSelectors.formSelector)
@@ -79,7 +73,6 @@ export const enableValidation = ({ elementSelectors }) => {
     formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
     });
-
     setEventListeners(formElement, { elementSelectors });
   });
 };
