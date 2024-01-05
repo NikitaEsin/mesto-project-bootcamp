@@ -18,6 +18,19 @@ export const getUserProfile = () => {
     headers: config.headers,
   }).then(getResponse);
 };
+
+/*
+fetch('https://nomoreparties.co/v1/wbf-cohort-7/users/me',{
+headers: {
+  authorization: '91089aeb-9e00-4a3f-9cf9-1d0f7117fd38',
+  'Content-Type': 'application/json',}
+}).then((res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Ошибка ${res.status}`);
+})*/
+
 export const getInitialCards = () => {
   return fetch(`${config.baseUrl}/cards`, {
     headers: config.headers,
